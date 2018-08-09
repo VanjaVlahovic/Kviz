@@ -9,12 +9,44 @@ public class Pitanje implements Serializable {
 	private int redniBroj;
 	
 	private String pitanje;
-	private String odgovor1;
-	private String odgovor2;
-	private String odgovor3;
-	private String odgovor4;
+	private Odgovor odgovor1;
+	private Odgovor odgovor2;
+	private Odgovor odgovor3;
+	private Odgovor odgovor4;
 	
 	
+	public Odgovor getOdgovor1() {
+		return odgovor1;
+	}
+
+	public void setOdgovor1(Odgovor odgovor1) {
+		this.odgovor1 = odgovor1;
+	}
+
+	public Odgovor getOdgovor2() {
+		return odgovor2;
+	}
+
+	public void setOdgovor2(Odgovor odgovor2) {
+		this.odgovor2 = odgovor2;
+	}
+
+	public Odgovor getOdgovor3() {
+		return odgovor3;
+	}
+
+	public void setOdgovor3(Odgovor odgovor3) {
+		this.odgovor3 = odgovor3;
+	}
+
+	public Odgovor getOdgovor4() {
+		return odgovor4;
+	}
+
+	public void setOdgovor4(Odgovor odgovor4) {
+		this.odgovor4 = odgovor4;
+	}
+
 	public int getRedniBroj() {
 		return redniBroj;
 	}
@@ -23,38 +55,7 @@ public class Pitanje implements Serializable {
 		this.redniBroj = redniBroj;
 	}
 	
-	public String getOdgovor1() {
-		return odgovor1;
-	}
 	
-	public void setOdgovor1(String odgovor1) {
-		this.odgovor1 = odgovor1;
-	}
-	
-	public String getOdgovor2() {
-		return odgovor2;
-	}
-	
-	public void setOdgovor2(String odgovor2) {
-		this.odgovor2 = odgovor2;
-	}
-	
-	public String getOdgovor3() {
-		return odgovor3;
-	}
-	
-	public void setOdgovor3(String odgovor3) {
-		this.odgovor3 = odgovor3;
-	}
-	
-	public String getOdgovor4() {
-		return odgovor4;
-	}
-	
-	public void setOdgovor4(String odgovor4) {
-		this.odgovor4 = odgovor4;
-	}
-
 	public String getPitanje() {
 		return pitanje;
 	}
@@ -65,9 +66,11 @@ public class Pitanje implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Pitanje [redniBroj=" + redniBroj + ", pitanje=" + pitanje + ", odgovor1=" + odgovor1 + ", odgovor2="
-				+ odgovor2 + ", odgovor3=" + odgovor3 + ", odgovor4=" + odgovor4 + "]";
+		return redniBroj + ". " + pitanje + "\n a) " + odgovor1 + "\n b) "
+				+ odgovor2 + "\n c) " + odgovor3 + "\n d) " + odgovor4+"\n";
 	}
+
+	
 	
 	
 }

@@ -7,13 +7,10 @@ import baza.Pitanje;
 
 public class SOPrikazListe {
 	public static String izvrsi(Baza lista) {
-		LinkedList<Pitanje> pom = lista.vratiListu();
-		int i = 0;
+		Baza pom = lista;
 		String tekst = "";
-		while (!pom.getLast().equals(pom.get(i))) {
-			tekst = tekst + pom.get(0).toString() + "\n";
-			i++;
-		}
-		return tekst + "\n" + pom.getLast().toString();
+		for (int i=0; i<pom.getBrojPitanja(); i++)
+			tekst = tekst + pom.vratiListu().get(i);
+		return tekst;
 	}
 }
