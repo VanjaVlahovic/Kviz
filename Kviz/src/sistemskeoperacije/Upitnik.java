@@ -312,10 +312,15 @@ public class Upitnik extends JFrame {
 		if (btnUcitajListu == null) {
 			btnUcitajListu = new JButton("Ucitaj listu");
 			btnUcitajListu.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
+				public void actionPerformed(ActionEvent e) {	
 					String putanja = "data/"+textFieldFajl.getText();
-					lista=SOUcitajIzFajla.izvrsi(putanja);
-					textArea.setText(SOPrikazListe.izvrsi(lista));
+					File f = new File(putanja);
+					if(!f.exists()) 
+						textArea.setText("Lista pitanja je prazna");
+					else {
+						lista=SOUcitajIzFajla.izvrsi(putanja);
+						textArea.setText(SOPrikazListe.izvrsi(lista));
+					}
 				}
 			});
 			btnUcitajListu.setBounds(492, 162, 91, 23);
